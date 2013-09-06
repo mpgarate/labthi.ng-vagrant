@@ -1,2 +1,2 @@
-start.it-vagrant
+labthi.ng-vagrant
 ================
