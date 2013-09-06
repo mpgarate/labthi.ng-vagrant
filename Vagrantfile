@@ -7,11 +7,11 @@ Vagrant.configure("2") do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise32"
+  config.vm.box = "labthing-lubuntu-ready"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+  # config.vm.box_url = "http://files.vagrantup.com/precise32.box"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -26,12 +26,6 @@ Vagrant.configure("2") do |config|
   # Bridged networks make the machine appear as another physical device on
   # your network.
   # config.vm.network :public_network
-
-  # Give us a GUI
-  config.vm.provider "virtualbox" do |v|
-    v.gui = true
-    v.name = "Start.it VM"
-  end
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -54,6 +48,14 @@ Vagrant.configure("2") do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
 
+	config.vm.provider "virtualbox" do |v|
+		v.gui = true
+		v.customize ["modifyvm", :id, "--memory", "1024"]
+		v.customize ["modifyvm", :id, "--cpus", "2"]
+		v.customize ["modifyvm", :id, "--vram", "256"]
+		v.customize ["modifyvm", :id, "--ioapic", "on"]
+	end
+  
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
   # You will need to create the manifests directory and a manifest in
@@ -114,4 +116,18 @@ Vagrant.configure("2") do |config|
   # chef-validator, unless you changed the configuration.
   #
   #   chef.validation_client_name = "ORGNAME-validator"
+  
+  # VBox Guest Additions:
+  # we will try to autodetect this path. 
+  # However, if we cannot or you have a special one you may pass it like:
+  # config.vbguest.iso_path = "#{ENV['HOME']}/Downloads/VBoxGuestAdditions.iso"
+  # or
+  # config.vbguest.iso_path = "http://company.server/VirtualBox/%{version}/VBoxGuestAdditions.iso"
+
+  # set auto_update to false, if do NOT want to check the correct additions 
+  # version when booting this machine
+  config.vbguest.auto_update = true
+
+  # do NOT download the iso file from a webserver
+  config.vbguest.no_remote = true
 end
