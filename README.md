@@ -10,6 +10,12 @@ Install the following:
 * [Download the xubuntu box](https://mega.co.nz/#!1R530ZbA!AiSPanz_qeOO7jgOZwTGdR8affpuqKUEhlhxiyrxuAU)
 * Install with 'vagrant box add'
 
+This box is based on xubuntu and contains the following:
+* Postgres configured for labthi.ng
+* Rails 4
+* Sublime Text
+* Gnome Terminal
+
 ### Post Install Script
 The script does the following:
 * Configure Git email
@@ -17,3 +23,6 @@ The script does the following:
 * Generate an ssh key
 * Import keys to Heroku
 * Install Imagemagick
+
+### Optional Steps
+* Enable bidirectional clipboard in VirtualBox gui settings
