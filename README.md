@@ -32,3 +32,8 @@ Generate a ssh key and add it to heroku:
 
 ### Optional Steps
 * Enable bidirectional clipboard in VirtualBox gui settings
+* Set Sublime Text user settings to:
+    {
+    	"font_size": 10,
+    	"tab_with": 2
+    }
