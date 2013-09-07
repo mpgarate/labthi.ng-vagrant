@@ -24,5 +24,11 @@ The script does the following:
 * Import keys to Heroku
 * Install Imagemagick
 
+### On your own
+Generate a ssh key and add it to heroku:
+
+    ssh-keygen -t rsa
+    heroku keys:add
+
 ### Optional Steps
 * Enable bidirectional clipboard in VirtualBox gui settings
