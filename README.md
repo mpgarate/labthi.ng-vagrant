@@ -37,5 +37,5 @@ Generate a ssh key and add it to heroku:
 
     {
         "font_size": 10,
-    	"tab_with": 2
+    	"tab_size": 2
     }
