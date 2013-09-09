@@ -17,7 +17,8 @@ This box is based on xubuntu and contains the following:
 * Gnome Terminal
 
 ### Post Install Script
-The script does the following:
+The script should not be run as root. It will prompt for a password when required. 
+It does the following:
 * Configure Git email
 * Install Heroku
 * Generate an ssh key
