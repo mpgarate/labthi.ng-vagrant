@@ -13,8 +13,3 @@ ssh-keygen -t rsa
 
 echo "importing key into heroku..."
 heroku keys:add
-
-
-echo "installing imagemagick"
-sudo apt-get install imagemagick -y
-
